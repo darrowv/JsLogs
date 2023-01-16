@@ -1,0 +1,90 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  font-family: 'Source Code Pro', monospace;
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  padding: 7px;
+  background-color: grey;
+  display: flex;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+textarea {
+  /* flex: 1; */
+  width: 50%;
+  font: inherit;
+  font-weight: 500;
+  resize: none;
+  padding: 20px 25px;
+  outline: none;
+  border: none;
+  font-size: .95rem;
+}
+
+.output-field {
+  width: 50%;
+  flex: 1 1 0%;
+  background-color: rgb(238, 238, 238);
+  padding: .5rem;
+}
+
+.output-field ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 10px;
+  font-size: 0.9rem;
+}
+
+li {
+  white-space: pre-wrap;
+  padding: 10px;
+  border-bottom: 1px solid rgb(208, 208, 208);
+}
+
+.resize {
+  height: 100%;
+  cursor: col-resize;
+  background-color: rgb(223, 248, 223);
+  border: 1px solid rgb(51, 51, 51);
+  padding: 7px;
+}
+
+.resize:hover {
+  border: 1px dashed rgb(51, 51, 51);
+}
+
+button {
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  width: 50px;
+}
