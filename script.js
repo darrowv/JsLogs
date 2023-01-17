@@ -34,7 +34,7 @@ runBtn.addEventListener("click", () => {
     let li = document.createElement("li");
     if (log instanceof Error) {
       li.textContent = log.message;
-      li.style.color = "red";
+      li.style.color = "#ee0028";
     } else if (typeof log === "object") {
       li.textContent = JSON.stringify(log);
     } else if (typeof log === "string") {

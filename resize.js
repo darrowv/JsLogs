@@ -18,7 +18,8 @@ const mouseDownHandler = function (e) {
   x = e.clientX;
   y = e.clientY;
   leftWidth = leftSide.getBoundingClientRect().width;
-
+  
+  resizer.style.border = "1px dashed rgb(226, 226, 226)";
   // Attach the listeners to `document`
   document.addEventListener("mousemove", mouseMoveHandler);
   document.addEventListener("mouseup", mouseUpHandler);
@@ -36,6 +37,7 @@ const mouseMoveHandler = function (e) {
     ((leftWidth + dx) * 100) / resizer.parentNode.getBoundingClientRect().width;
   leftSide.style.width = `${newLeftWidth}%`;
 
+
   leftSide.style.userSelect = "none";
   leftSide.style.pointerEvents = "none";
 
@@ -45,7 +47,7 @@ const mouseMoveHandler = function (e) {
 
 const mouseUpHandler = function () {
   resizer.style.removeProperty("cursor");
-  // document.body.style.removeProperty('cursor');
+  resizer.style.removeProperty("border");
 
   leftSide.style.removeProperty("user-select");
   leftSide.style.removeProperty("pointer-events");
