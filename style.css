@@ -23,7 +23,7 @@ html, body {
   5. Improve text rendering
 */
 body {
-  padding: 7px;
+  padding: 4rem;
   background-color: grey;
   display: flex;
   line-height: 1.5;
@@ -54,6 +54,7 @@ textarea {
   flex: 1 1 0%;
   background-color: rgb(238, 238, 238);
   padding: .5rem;
+  overflow-x: scroll;
 }
 
 .output-field ul {
@@ -87,4 +88,5 @@ button {
   border-radius: 5px;
   padding: 5px;
   width: 50px;
+  cursor: pointer;
 }

@@ -12,18 +12,49 @@
       href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <!-- ----------- -->
+
+    <!-- highlight.js -->
+    <link
+      rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"
+    />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <!-- ----------- -->
 
     <link rel="stylesheet" href="style.css" />
     <title>Logger</title>
   </head>
   <body>
-    <textarea id="inputArea" placeholder="write your js code here"> </textarea>
+    <textarea
+      is="highlighted-code"
+      language="javascript"
+      id="inputArea"
+      spellcheck="false"
+      placeholder="write your js code here"
+    >
+    </textarea>
     <div id="resize" class="resize"></div>
     <div class="output-field" id="output">
-      <button id="runBtn">RUN</button>
-      <button id="clearBtn">CLEAR</button>
+      <button title="ctrl+enter" id="runBtn">RUN</button>
+      <button title="ctrl+\" id="clearBtn">CLEAR</button>
       <ul id="outputList"></ul>
     </div>
+
+    <script type="module">
+      (async ({ chrome, netscape }) => {
+        if (!chrome && !netscape) {
+          await import("https://unpkg.com/@ungap/custom-elements");
+        }
+
+        const { default: HighlightedCode } = await import(
+          "https://unpkg.com/highlighted-code"
+        );
+
+        HighlightedCode.useTheme("tokyo-night-dark");
+      })(self);
+    </script>
     <script src="script.js"></script>
+    <script src="resize.js"></script>
   </body>
 </html>
