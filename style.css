@@ -1,3 +1,21 @@
+/* colors */
+
+:root {
+  --bg-color: #0d0f1f;
+  --input-area-color: #1a1b26;
+  --output-field-color: #212237;
+  --resizer-color: #372257;
+  --primary-font-color: #aab1c8;
+}
+
+.lightMode {
+  --bg-color: #e8e6dc;
+  --input-area-color: #dcdaca;
+  --output-field-color: #3d3d3d;
+  --resizer-color: #202020;
+  --primary-font-color: #202020;
+}
+
 /* general styles */
 
 *,
@@ -18,13 +36,19 @@ body {
 
 body {
   padding: 4rem;
-  background-color: #0d0f1f;
+  background-color: var(--bg-color);
   display: flex;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -34,8 +58,8 @@ p, h1, h2, h3, h4, h5, h6 {
   width: 50%;
   font: inherit;
   font-weight: 500;
-  background-color: #1a1b26;
-  color: #939ec6;
+  background-color: var(--input-area-color);
+  color: var(--primary-font-color);
   resize: none;
   padding: 20px 25px;
   outline: none;
@@ -47,8 +71,8 @@ p, h1, h2, h3, h4, h5, h6 {
 .output-field {
   width: 50%;
   flex: 1 1 0%;
-  background-color: #212237;
-  color: #aab1c8;
+  background-color: var(--output-field-color);
+  color: var(--primary-font-color);
   padding: 0.5rem;
   word-wrap: break-word;
   overflow-y: scroll;
@@ -59,14 +83,15 @@ p, h1, h2, h3, h4, h5, h6 {
   background-color: #c02e46;
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 1px;
   padding: 5px;
   width: 60px;
-  font-size: .8rem;
+  font-size: 0.8rem;
   cursor: pointer;
 }
 
-.output-field button:hover, .output-field button:focus {
+.output-field button:hover,
+.output-field button:focus {
   background-color: #a1192f;
 }
 
@@ -85,16 +110,29 @@ p, h1, h2, h3, h4, h5, h6 {
 
 .resize {
   cursor: col-resize;
-  background-color: #372257;
-  border: 1px solid #372257;
+  background-color: var(--resizer-color);
+  border: 1px solid var(--resizer-color);
   padding: 5px;
 }
 
-.resize:hover, .resize:focus {
+.resize:hover,
+.resize:focus {
   border: 1px dashed rgb(226, 226, 226);
 }
 
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+#toggle {
+  position: absolute;
+  left: calc(50% - 10px);
+  top: 1rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+#toggle:hover {
+  filter: brightness(1.2);
 }

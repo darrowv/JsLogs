@@ -18,7 +18,7 @@
     <title>Logger</title>
   </head>
   <body>
-
+    <span id="toggle">🌞</span>
     <textarea
       is="highlighted-code"
       language="javascript"
@@ -33,7 +33,7 @@
       <ul id="outputList" class="output-list"></ul>
     </div>
 
-    <script type="module">
+    <script>
       (async ({ chrome, netscape }) => {
         if (!chrome && !netscape) {
           await import("https://unpkg.com/@ungap/custom-elements");
@@ -46,7 +46,9 @@
         HighlightedCode.useTheme("tokyo-night-dark");
       })(self);
     </script>
+
     <script src="script.js"></script>
     <script src="resize.js"></script>
+    <script src="themeToggle.js"></script>
   </body>
 </html>
