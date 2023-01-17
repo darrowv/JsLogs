@@ -10,13 +10,15 @@ console.logs = [];
 
 console.log = function (...args) {
   args.forEach((arg) => console.logs.push(arg));
-  console.stdlog.apply(console, arguments);
+  console.stdlog.apply(console, args);
 };
 
 console.clear = function () {
   console.logs = [];
   console.stdclear.apply(console);
 };
+
+// ----------------------------------------- //
 
 runBtn.addEventListener("click", () => {
   // это здесь, чтобы список логов каждый раз обновлялся
@@ -44,6 +46,11 @@ runBtn.addEventListener("click", () => {
   });
 });
 
+clearBtn.addEventListener("click", () => {
+  console.clear();
+  outputList.innerHTML = "";
+});
+
 // hotkeys
 document.addEventListener("keydown", (e) => {
   if(e.ctrlKey && e.key === "Enter") {
@@ -51,9 +58,4 @@ document.addEventListener("keydown", (e) => {
   } else if (e.ctrlKey && e.key === "\\") {
     clearBtn.click();
   }
-});
-
-clearBtn.addEventListener("click", () => {
-  console.clear();
-  outputList.innerHTML = "";
 });
