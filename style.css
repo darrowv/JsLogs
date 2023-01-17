@@ -1,4 +1,8 @@
-*, *::before, *::after {
+/* general styles */
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -6,8 +10,9 @@
   margin: 0;
 }
 
-html, body {
-  font-family: 'Source Code Pro', monospace;
+html,
+body {
+  font-family: "Source Code Pro", monospace;
   height: 100%;
 }
 
@@ -23,7 +28,9 @@ p, h1, h2, h3, h4, h5, h6 {
   overflow-wrap: break-word;
 }
 
-textarea {
+/* particular styles */
+
+#inputArea {
   width: 50%;
   font: inherit;
   font-weight: 500;
@@ -31,20 +38,28 @@ textarea {
   padding: 20px 25px;
   outline: none;
   border: none;
-  font-size: .95rem;
+  font-size: 0.95rem;
 }
 
 .output-field {
   width: 50%;
   flex: 1 1 0%;
   background-color: rgb(238, 238, 238);
-  padding: .5rem;
-  overflow-x: scroll;
+  padding: 0.5rem;
+  word-wrap: break-word;
+  overflow-y: scroll;
+}
+
+.output-field button {
+  background-color: white;
+  border-radius: 5px;
+  padding: 5px;
+  width: 60px;
+  cursor: pointer;
 }
 
 .output-list {
   list-style-type: none;
-  margin: 0;
   padding: 0;
   padding-top: 10px;
   font-size: 0.9rem;
@@ -57,21 +72,12 @@ textarea {
 }
 
 .resize {
-  height: 100%;
   cursor: col-resize;
   background-color: rgb(223, 248, 223);
   border: 1px solid rgb(51, 51, 51);
-  padding: 7px;
+  padding: 5px;
 }
 
 .resize:hover {
   border: 1px dashed rgb(51, 51, 51);
-}
-
-button {
-  background-color: white;
-  border-radius: 5px;
-  padding: 5px;
-  width: 50px;
-  cursor: pointer;
 }
