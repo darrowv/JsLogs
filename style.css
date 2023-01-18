@@ -1,21 +1,21 @@
 /* colors */
 
 :root {
+  --bg-color: #ddd7c1;
+  --input-area-color: #f1ead6;
+  --output-field-color: #e4dbc5;
+  --resizer-color: #a18b49;
+  --primary-font-color: #454442;
+  --shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+}
+
+.dark-theme {
   --bg-color: #0d0f1f;
   --input-area-color: #1a1b26;
   --output-field-color: #212237;
   --resizer-color: #372257;
   --primary-font-color: #aab1c8;
   --shadow: none;
-}
-
-body.light-theme {
-  --bg-color: #ddd7c1;
-  --input-area-color: #f1ead6;
-  --output-field-color: #e4dbc5;
-  --resizer-color: #a77f07;
-  --primary-font-color: #454442;
-  --shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
 /* general styles */
@@ -54,7 +54,7 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* particular styles */ 
+/* particular styles */
 
 .CodeMirror {
   height: 100%;
@@ -65,6 +65,7 @@ h6 {
   padding: 20px 25px;
   font-size: 0.95rem;
   box-shadow: var(--shadow);
+  cursor: text;
 }
 
 .CodeMirror-empty {
