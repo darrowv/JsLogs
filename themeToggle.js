@@ -6,7 +6,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById("inputArea"), {
   autoCloseBrackets: true,
   autofocus: true,
   matchBrackets: true,
-  highlightSelectionMatches: true,
+  highlightSelectionMatches: true
 });
 
 // theme toggling

@@ -74,7 +74,11 @@ h6 {
 }
 
 .CodeMirror-empty {
-  color: rgb(110, 110, 110);
+  color: rgba(0, 0, 0, 0.653);
+}
+
+.CodeMirror-selected {
+  background-color: rgba(0, 55, 255, 0.181) !important;
 }
 
 .cm-matchhighlight {
