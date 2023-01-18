@@ -8,14 +8,14 @@ let isLight = true;
 
 if (currentTheme == "light") {
   pageTheme.classList.add("light-theme");
-  themeToggle.innerText = "🌚"
+  themeToggle.innerText = "🌑"
 } else {
-  themeToggle.innerText="🌞";
+  themeToggle.innerText="☀️";
 }
 
 function themeMode() {
   isLight = !isLight;
-  isLight ? themeToggle.innerText = "🌞" : themeToggle.innerText = "🌚";
+  isLight ? themeToggle.innerText = "☀️" : themeToggle.innerText = "🌑";
   pageTheme.classList.toggle("light-theme");
   
   let theme = "dark";

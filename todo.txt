@@ -1,3 +1,2 @@
 1. Complete light mode
 2. Bug with asynchronous code
-3. Autocompletion

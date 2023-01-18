@@ -14,7 +14,7 @@ body.light-theme {
   --input-area-color: #f1ead6;
   --output-field-color: #e4dbc5;
   --resizer-color: #a77f07;
-  --primary-font-color: #6c6a66;
+  --primary-font-color: #454442;
   --shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
@@ -54,7 +54,7 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* particular styles */
+/* particular styles */ 
 
 .CodeMirror {
   height: 100%;
@@ -114,7 +114,7 @@ h6 {
 .output-list li {
   white-space: pre-wrap;
   padding: 10px;
-  border-bottom: 1px solid rgba(206, 206, 206, 0.342);
+  border-bottom: 1px solid rgba(148, 148, 148, 0.342);
 }
 
 .resize {

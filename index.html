@@ -14,7 +14,7 @@
     />
     <!-- ----------- -->
 
-    <!--  -->
+    <!-- codemirror styles and scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.11/codemirror.min.js"></script>
     <link
       rel="stylesheet"
@@ -30,19 +30,18 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.11/theme/dracula.min.css"
     />
-    <!--  -->
+    <!-- ---------------------------- -->
 
     <link rel="stylesheet" href="style.css" />
     <title>Logger</title>
   </head>
   <body>
-    <span id="themeToggle">🌞</span>
+    <span id="themeToggle">☀️</span>
     <textarea
       placeholder="Write your js code here..."
       id="inputArea"
       spellcheck="false"
-    >
-    </textarea>
+    ></textarea>
     <div id="resize" class="resize"></div>
     <div class="output-field" id="output">
       <button title="ctrl+enter" id="runBtn">RUN</button>
@@ -51,8 +50,8 @@
     </div>
     
 
-    <script defer src="themeToggle.js"></script>
     <script defer src="script.js"></script>
+    <script defer src="themeToggle.js"></script>
     <script defer src="resize.js"></script>
   </body>
 </html>

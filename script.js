@@ -25,7 +25,7 @@ runBtn.addEventListener("click", () => {
   outputList.innerHTML = "";
 
   try {
-    eval(inputArea.value);
+    eval(editor.getValue());
   } catch (error) {
     console.log(new Error("Error: " + error.message));
   }
