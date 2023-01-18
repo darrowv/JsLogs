@@ -1,6 +1,6 @@
 # Online JS Code Console
 
-[Try it out](https://darrowv.github.io/JsLogs/)
+### [Try it out](https://darrowv.github.io/JsLogs/)
 
 ## Features
 - Syntax highlighting
@@ -22,4 +22,10 @@ Currently we have next issues:
 ## Licensing
 This software is released under the [MIT License](https://opensource.org/licenses/MIT).
 
-Thanks for using our Online JS Code Editor! Happy coding!
+## Credits
+-The code editor is made using the [CodeMirror library](https://codemirror.net/). Guided by [this manual](https://www.math.ucla.edu/sites/all/libraries/codemirror/doc/manual.html).
+-Favicon taken from [svgrepo](https://www.svgrepo.com/svg/427431/brochure-document-menu).
+-The idea of theme switching mechanism is taken from [here](https://dev.to/vaishnavs/simple-dark-light-toggle-with-vanillajs-2cbj).
+-The script for resizing divs by dragging was taken from [here](https://htmldom.dev/).
+
+Thanks for using this app! Happy coding!
