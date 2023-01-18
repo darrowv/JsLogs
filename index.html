@@ -14,14 +14,31 @@
     />
     <!-- ----------- -->
 
+    <!--  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.11/codemirror.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.11/codemirror.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.11/addon/display/placeholder.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.11/addon/edit/closebrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.11/addon/search/searchcursor.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.11/addon/search/match-highlighter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.11/addon/edit/matchbrackets.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.11/mode/javascript/javascript.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.11/theme/dracula.min.css"
+    />
+    <!--  -->
+
     <link rel="stylesheet" href="style.css" />
     <title>Logger</title>
   </head>
   <body>
-    <span id="toggle">🌞</span>
+    <span id="themeToggle">🌞</span>
     <textarea
-      is="highlighted-code"
-      language="javascript"
+      placeholder="Write your js code here..."
       id="inputArea"
       spellcheck="false"
     >
@@ -32,23 +49,10 @@
       <button title="ctrl+\" id="clearBtn">CLEAR</button>
       <ul id="outputList" class="output-list"></ul>
     </div>
+    
 
-    <script>
-      (async ({ chrome, netscape }) => {
-        if (!chrome && !netscape) {
-          await import("https://unpkg.com/@ungap/custom-elements");
-        }
-
-        const { default: HighlightedCode } = await import(
-          "https://unpkg.com/highlighted-code"
-        );
-
-        HighlightedCode.useTheme("tokyo-night-dark");
-      })(self);
-    </script>
-
-    <script src="script.js"></script>
-    <script src="resize.js"></script>
-    <script src="themeToggle.js"></script>
+    <script defer src="themeToggle.js"></script>
+    <script defer src="script.js"></script>
+    <script defer src="resize.js"></script>
   </body>
 </html>

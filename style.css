@@ -6,14 +6,16 @@
   --output-field-color: #212237;
   --resizer-color: #372257;
   --primary-font-color: #aab1c8;
+  --shadow: none;
 }
 
-.lightMode {
-  --bg-color: #e8e6dc;
-  --input-area-color: #dcdaca;
-  --output-field-color: #3d3d3d;
-  --resizer-color: #202020;
-  --primary-font-color: #202020;
+body.light-theme {
+  --bg-color: #ddd7c1;
+  --input-area-color: #f1ead6;
+  --output-field-color: #e4dbc5;
+  --resizer-color: #a77f07;
+  --primary-font-color: #6c6a66;
+  --shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
 }
 
 /* general styles */
@@ -54,18 +56,24 @@ h6 {
 
 /* particular styles */
 
-#inputArea {
+.CodeMirror {
+  height: 100%;
   width: 50%;
-  font: inherit;
   font-weight: 500;
-  background-color: var(--input-area-color);
-  color: var(--primary-font-color);
   resize: none;
+  background-color: var(--input-area-color) !important;
   padding: 20px 25px;
-  outline: none;
-  border: none;
   font-size: 0.95rem;
-  scrollbar-width: none;
+  box-shadow: var(--shadow);
+}
+
+.CodeMirror-empty {
+  color: rgb(110, 110, 110);
+}
+
+.cm-matchhighlight {
+  text-decoration: underline;
+  text-decoration-style: wavy;
 }
 
 .output-field {
@@ -77,6 +85,7 @@ h6 {
   word-wrap: break-word;
   overflow-y: scroll;
   scrollbar-width: none;
+  box-shadow: var(--shadow);
 }
 
 .output-field button {
@@ -125,7 +134,7 @@ h6 {
   height: 0;
 }
 
-#toggle {
+#themeToggle {
   position: absolute;
   left: calc(50% - 10px);
   top: 1rem;
@@ -133,6 +142,6 @@ h6 {
   font-size: 1.5rem;
 }
 
-#toggle:hover {
+#themeToggle:hover {
   filter: brightness(1.2);
 }
