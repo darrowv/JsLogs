@@ -10,7 +10,7 @@
 - Run and clear console buttons (or run on "ctrl + enter" and clear on "ctrt + \")
 
 ## Tips
-- You can also use the keyboard shortcuts to run the code (Ctrl+Enter) and to clear console output (Ctrl + "\")
+- You can also use the keyboard shortcuts to run the code (Ctrl+Enter) and to clear console output (Ctrl + \\)
 - You can change the theme of the editor by clicking on (initially) the moon.
 
 ## Contribution
