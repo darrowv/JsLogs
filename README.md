@@ -1,6 +1,6 @@
 # Online JS Code Console
 
-[Try it out](https://https://darrowv.github.io/JsLogs)
+[Try it out](https://darrowv.github.io/JsLogs/)
 
 ## Features
 - Syntax highlighting
