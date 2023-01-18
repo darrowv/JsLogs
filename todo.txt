@@ -1,2 +1,1 @@
-1. Исправить ошибку со сменой темы
-2. Bug with asynchronous code
+1. Bug with asynchronous code
