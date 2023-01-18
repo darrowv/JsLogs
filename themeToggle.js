@@ -18,6 +18,7 @@ let editorArea = document.querySelector(".CodeMirror");
 
 if (!currentTheme) {
   localStorage.setItem("theme", "light");
+  currentTheme = "light";
 }
 
 if (currentTheme === "light") {
