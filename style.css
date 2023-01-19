@@ -134,7 +134,7 @@ h6 {
 
 .resize:hover,
 .resize:focus {
-  border: 1px dashed rgb(226, 226, 226);
+  border: 1px dashed var(--primary-font-color);
 }
 
 ::-webkit-scrollbar {

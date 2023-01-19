@@ -19,7 +19,7 @@ const mouseDownHandler = function (e) {
   y = e.clientY;
   leftWidth = leftSide.getBoundingClientRect().width;
   
-  resizer.style.border = "1px dashed rgb(226, 226, 226)";
+  resizer.style.border = "1px dashed var(--primary-font-color)";
   // Attach the listeners to `document`
   document.addEventListener("mousemove", mouseMoveHandler);
   document.addEventListener("mouseup", mouseUpHandler);
