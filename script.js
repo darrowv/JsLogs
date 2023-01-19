@@ -39,6 +39,8 @@ runBtn.addEventListener("click", () => {
   } catch (error) {
     console.log(new Error("Error: " + error.message));
   }
+
+  localStorage.setItem("input", editor.getValue());
 });
 
 clearBtn.addEventListener("click", () => {
@@ -53,3 +55,6 @@ document.addEventListener("keydown", (e) => {
     console.clear();
   }
 });
+
+var savedCode = localStorage.getItem("input");
+editor.setValue(savedCode);

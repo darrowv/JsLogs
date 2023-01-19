@@ -82,8 +82,7 @@ h6 {
 }
 
 .cm-matchhighlight {
-  text-decoration: underline;
-  text-decoration-style: wavy;
+  background-color: rgba(0, 55, 255, 0.277) !important;
 }
 
 .output-field {
