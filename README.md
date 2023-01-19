@@ -13,6 +13,21 @@
 - You can also use the keyboard shortcuts to run the code (Ctrl+Enter) and to clear console output (Ctrl + \\)
 - You can change the theme of the editor by clicking on (initially) the moon.
 
+## Code Snippets
+There are some code snippets added in code editor for convenience. If you want some more, let me know about it. Here is the list of current snippets:
+
+```javascript
+var customSnippets = {
+  "cl": 'console.log();',
+  "cc": "console.clear();",
+  "fd": "function name() {\n\n};",
+  "af": "let foo = () => {};",
+  "lorem": `"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ab eveniet ipsa hic quod, ipsam quia quo? Nam consequatur, nostrum ullam consequuntur mollitia ipsa deserunt eaque, ipsam quo sit animi!"`
+}
+```
+
+To activate code snippet just type it and press Tab.
+
 ## Contribution
 We welcome contributions from the community to improve the editor. You can fork the repository and create a pull request with your changes.
 
