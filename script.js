@@ -4,6 +4,7 @@ var runBtn = document.getElementById("runBtn");
 var clearBtn = document.getElementById("clearBtn");
 
 console.stdlog = console.log.bind(console);
+console.stdclear = console.clear.bind(console);
 
 console.log = function (...args) {
   args.forEach((log) => {
@@ -16,12 +17,19 @@ console.log = function (...args) {
     } else if (typeof log === "string") {
       li.textContent = `"${log}"`;
     } else {
-      li.textContent = `${log}`;
+      li.textContent = log;
     }
     outputList.append(li);
   });
   console.stdlog.apply(console, args);
 };
+
+console.clear = function() {
+  while(outputList.firstChild) {
+    outputList.removeChild(outputList.firstChild);
+  };
+  console.stdclear.apply(console);
+}
 
 // ----------------------------------------- //
 
@@ -35,7 +43,6 @@ runBtn.addEventListener("click", () => {
 
 clearBtn.addEventListener("click", () => {
   console.clear();
-  outputList.innerHTML = "";
 });
 
 // hotkeys
@@ -43,6 +50,6 @@ document.addEventListener("keydown", (e) => {
   if (e.ctrlKey && e.key === "Enter") {
     runBtn.click();
   } else if (e.ctrlKey && e.key === "\\") {
-    clearBtn.click();
+    console.clear();
   }
 });
