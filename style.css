@@ -39,7 +39,6 @@ body {
 body {
   padding: 4rem;
   background-color: var(--bg-color);
-  
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -60,7 +59,7 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* particular styles */
+/* CodeMirror styles */
 
 .CodeMirror {
   height: 100%;
@@ -84,6 +83,13 @@ h6 {
 .cm-matchhighlight {
   background-color: rgba(0, 55, 255, 0.277) !important;
 }
+
+.dark-theme .CodeMirror-matchingbracket {
+  background-color: rgba(128, 128, 128, 0.296);
+  text-decoration: none;
+}
+
+/* particular styles */
 
 .output-field {
   width: 50%;
@@ -132,7 +138,6 @@ h6 {
   padding: 5px;
 }
 
-.resize:hover,
 .resize:focus {
   border: 1px dashed var(--primary-font-color);
 }
