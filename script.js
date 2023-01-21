@@ -9,27 +9,22 @@ console.stdclear = console.clear.bind(console);
 console.log = function (...args) {
   args.forEach((log) => {
     let li = document.createElement("li");
-    if (log instanceof Error) {
-      li.textContent = log.message;
+    li.textContent = formatLog(log);
+    if(formatLog(log) instanceof Error) {
+      li.textContent = formatLog(log).message;
       li.style.color = "#ee0028";
-    } else if (typeof log === "object") {
-      li.textContent = JSON.stringify(log);
-    } else if (typeof log === "string") {
-      li.textContent = `"${log}"`;
-    } else {
-      li.textContent = log;
     }
     outputList.append(li);
   });
   console.stdlog.apply(console, args);
 };
 
-console.clear = function() {
-  while(outputList.firstChild) {
+console.clear = function () {
+  while (outputList.firstChild) {
     outputList.removeChild(outputList.firstChild);
-  };
+  }
   console.stdclear.apply(console);
-}
+};
 
 // ----------------------------------------- //
 
@@ -58,3 +53,78 @@ document.addEventListener("keydown", (e) => {
 
 var savedCode = localStorage.getItem("input");
 editor.setValue(savedCode);
+
+// how to show different values in console
+
+function formatLog(log) {
+  let value = "";
+
+  if (log === null) {
+    value = "null";
+    return value;
+  } else if (log === undefined) {
+    value = "undefined";
+    return value;
+  } else if (log instanceof Error) {
+    value = log;
+    return value;
+  } else if (log === 0) {
+    value = Object.is(log, -0) ? "-0" : 0;
+    return value;
+  }
+
+  switch (typeof log) {
+    case "string":
+      value = `"${log}"`;
+      break;
+    case "bigint":
+      value = log + "n";
+      break;
+    case "object":
+      if (Array.isArray(log)) {
+        value = arrayTemplate(log);
+      } else {
+        value = objectTemplate(log);
+      }
+      break;
+    default:
+      value = log;
+      break;
+  }
+
+  return value;
+}
+
+function objectTemplate(obj) {
+  let str = "{";
+  for (const key in obj) {
+    if (typeof obj[key] === "object" && obj[key] !== null) {
+      if(Array.isArray(obj[key])) {
+        str += `\n  ${key}: ${arrayTemplate(obj[key])},`;
+      } else {
+        str += `\n  ${key}: ${objectTemplate(obj[key])},`;
+      }
+    } else {
+      str += `\n  ${key}: ${formatLog(obj[key])},`;
+    }
+  }
+  str = str.slice(0, -1);
+  str += "\n}";
+  return str;
+}
+
+function arrayTemplate(arr) {
+  let str = "[ ";
+
+  arr.forEach((el, index) => {
+    if(index !== arr.length - 1) {
+      str += formatLog(el) + ", ";
+    } else {
+      str += formatLog(el);
+    }
+  })
+
+  str += " ]";
+
+  return str
+}
