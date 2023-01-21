@@ -15,40 +15,40 @@
     <!-- ----------- -->
 
     <!-- codemirror styles and scripts -->
-    <link rel="stylesheet" href="CodeMirror/dracula.min.css" />
-    <link rel="stylesheet" href="CodeMirror/codemirror.min.css" />
-    <script src="CodeMirror/codemirror.min.js"></script>
-    <script src="CodeMirror/javascript.min.js"></script>
-    <script src="CodeMirror/placeholder.min.js"></script>
-    <script src="CodeMirror/closebrackets.min.js"></script>
-    <script src="CodeMirror/searchcursor.min.js"></script>
-    <script src="CodeMirror/match-highlighter.min.js"></script>
-    <script src="CodeMirror/matchbrackets.min.js"></script>
+    <link rel="stylesheet" href="lib/CodeMirror/dracula.min.css" />
+    <link rel="stylesheet" href="lib/CodeMirror/codemirror.min.css" />
+    <script src="lib/CodeMirror/codemirror.min.js"></script>
+    <script src="lib/CodeMirror/javascript.min.js"></script>
+    <script src="lib/CodeMirror/placeholder.min.js"></script>
+    <script src="lib/CodeMirror/closebrackets.min.js"></script>
+    <script src="lib/CodeMirror/searchcursor.min.js"></script>
+    <script src="lib/CodeMirror/match-highlighter.min.js"></script>
+    <script src="lib/CodeMirror/matchbrackets.min.js"></script>
     <!-- ---------------------------- -->
 
     <title>JsLogs</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <link rel="icon" type="image/png" href="favicon.png">
   </head>
   <body>
 
-    <button id="themeToggle"></button>
+    <button id="__themeToggle"></button>
     <div class="wrapper">
       <textarea
         placeholder="Write your js code here..."
-        id="inputArea"
+        id="__inputArea"
         spellcheck="false"
       ></textarea>
-      <div id="resize" class="resize"></div>
+      <div id="__resize" class="resize"></div>
       <div class="output-field" id="output">
-        <button title="ctrl+enter" id="runBtn">RUN</button>
-        <button title="ctrl+\" id="clearBtn">CLEAR</button>
-        <ul id="outputList" class="output-list"></ul>
+        <button title="ctrl+enter" id="__runBtn">RUN</button>
+        <button title="ctrl+\" id="__clearBtn">CLEAR</button>
+        <ul id="__outputList" class="output-list"></ul>
       </div>
     </div>
 
-    <script defer src="themeToggle.js"></script>
-    <script defer src="script.js"></script>
-    <script defer src="resize.js"></script>
+    <script type="module" src="src/script.js"></script>
+    <script type="module" src="src/themeToggle.js"></script>
+    <script defer src="src/utils/resize.js"></script>
   </body>
 </html>

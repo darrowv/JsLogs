@@ -135,7 +135,7 @@ body {
   height: 0;
 }
 
-#themeToggle {
+#__themeToggle {
   position: absolute;
   left: calc(50% - 10px);
   top: 1rem;
@@ -147,6 +147,6 @@ body {
   padding: 0;
 }
 
-#themeToggle:hover {
+#__themeToggle:hover {
   filter: brightness(1.2);
 }
