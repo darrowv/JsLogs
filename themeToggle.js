@@ -22,12 +22,12 @@ console.log(null);`,
   age: 55,
   job: "Builder",
   location: {
-    coutry: "USA",
+    country: "USA",
     city: "New York"
   },
   hobbies: [ "skiing", "writing poems", "paintning" ]
 }`,
-  numArr: "let arr = [ 432, 23, 233, 545, 5442, 0, 46554, 2, 132, 3229 ]"
+  numArr: "let arr = [ 432, 23, 233, 545, 5442, 0, 46554, 2, 132, 3229 ];"
 };
 
 var editor = CodeMirror.fromTextArea(document.getElementById("inputArea"), {
