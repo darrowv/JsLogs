@@ -34,7 +34,6 @@ runBtn.addEventListener("click", () => {
   } catch (error) {
     console.log(new Error("Error: " + error.message));
   }
-
   localStorage.setItem("input", editor.getValue());
 });
 
