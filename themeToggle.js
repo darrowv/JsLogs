@@ -6,8 +6,7 @@ var customSnippets = {
   fd: "function name() {\n\n};",
   af: "let foo = () => {};",
   lorem: `"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ab eveniet ipsa hic quod, ipsam quia quo? Nam consequatur, nostrum ullam consequuntur mollitia ipsa deserunt eaque, ipsam quo sit animi!"`,
-  testPrimitives: `
-console.log(12);
+  testPrimitives: `console.log(12);
 console.log("hello");
 console.log(32.5);
 console.log(435443n);
@@ -17,11 +16,8 @@ console.log(0);
 console.log(-0);
 console.log(Infinity);
 console.log(true);
-console.log(null);
-`,
-  obj:
-`
-let obj = {
+console.log(null);`,
+  obj: `let obj = {
   name: "Karl",
   age: 55,
   job: "Builder",
@@ -30,8 +26,8 @@ let obj = {
     city: "New York"
   },
   hobbies: [ "skiing", "writing poems", "paintning" ]
-}
-`
+}`,
+  numArr: "let arr = [ 432, 23, 233, 545, 5442, 0, 46554, 2, 132, 3229 ]"
 };
 
 var editor = CodeMirror.fromTextArea(document.getElementById("inputArea"), {
