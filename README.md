@@ -6,11 +6,13 @@
 - Syntax highlighting
 - Dark and light themes
 - Some "CodeMirror" features as brackets closing, match highlighting etc.
+- Code formatting with Prettier
 - Minimalistic design, just your js code input and console output
 - The code is saved in localstorage when the run button is pressed and is overwritten with each subsequent press.
 
 ## Tips
-- You can also use the keyboard shortcuts to run the code (Ctrl+Enter) and to clear console output (Ctrl + \\)
+- You can also use the keyboard shortcuts to run the code (Ctrl + Enter) and to clear console output (Ctrl + \\)
+- Use prettier to format your code (Alt + Shift + F).
 - You can change the theme of the editor by clicking on (initially) the moon.
 
 ## Code Snippets
@@ -25,7 +27,7 @@ var customSnippets = {
   "lorem": `"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis ab eveniet ipsa hic quod, ipsam quia quo? Nam consequatur, nostrum ullam consequuntur mollitia ipsa deserunt eaque, ipsam quo sit animi!"`
 }
 ```
-
+You can find all snippets in ./src/utils/snippetsAndEditor.js
 To activate code snippet just type it and press Tab.
 
 ## Contribution
@@ -36,6 +38,7 @@ We welcome contributions from the community to improve the editor. You can fork 
 - Favicon taken from [svgrepo](https://www.svgrepo.com/svg/427431/brochure-document-menu).
 - The idea of theme switching mechanism is taken from [here](https://dev.to/vaishnavs/simple-dark-light-toggle-with-vanillajs-2cbj).
 - The script for resizing divs by dragging was taken from [here](https://htmldom.dev/).
+- [Prettier in browser.](https://prettier.io/docs/en/browser.html)
 
 ## Licensing
 This software is released under the [MIT License](https://opensource.org/licenses/MIT).
