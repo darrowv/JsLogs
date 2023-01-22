@@ -1,5 +1,8 @@
+import prettier from "https://unpkg.com/prettier@2.8.3/esm/standalone.mjs";
+import babel from "https://unpkg.com/prettier@2.8.3/esm/parser-babel.mjs";
 import { __editor } from "./utils/snippetsAndEditor.js";
 import { __formatLog } from "./utils/formatOutput.js";
+
 
 var __outputList = document.getElementById("__outputList");
 var __runBtn = document.getElementById("__runBtn");
@@ -50,6 +53,13 @@ document.addEventListener("keydown", (e) => {
     __runBtn.click();
   } else if (e.ctrlKey && e.key === "\\") {
     console.clear();
+  } else if (e.shiftKey && e.altKey && e.key === "F") {
+    e.preventDefault();
+    let prettieredCode = prettier.format(__editor.getValue(), {
+      parser: "babel",
+      plugins: [babel],
+    });
+    __editor.setValue(prettieredCode);
   }
 });
 
