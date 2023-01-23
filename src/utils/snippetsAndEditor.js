@@ -26,6 +26,14 @@ console.log(null);`,
   hobbies: [ "skiing", "writing poems", "paintning" ]
 }`,
   numArr: "let arr = [ 432, 23, 233, 545, 5442, 0, 46554, 2, 132, 3229 ];",
+  switch: `switch (key) {
+    case value:
+      
+      break;
+  
+    default:
+      break;
+  }`
 };
 
 export var __editor = CodeMirror.fromTextArea(
