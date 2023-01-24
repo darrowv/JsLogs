@@ -10,31 +10,37 @@ var __clearBtn = document.getElementById("__clearBtn");
 console.stdlog = console.log.bind(console);
 console.stdclear = console.clear.bind(console);
 
+
 console.log = function (...args) {
+
   args.forEach((log) => {
     let li = document.createElement("li");
-    li.textContent = __formatLog(log);
-    if (__formatLog(log) instanceof Error) {
-      li.textContent = __formatLog(log).message;
-      li.style.color = "#ee0028";
+    if(log instanceof HTMLElement) {
+      li.textContent = "HTMLElement: " + log.tagName;
+    } else {
+      li.textContent = __formatLog(log);
+      if (__formatLog(log) instanceof Error) {
+        li.textContent = __formatLog(log).message;
+        li.style.color = "#ee0028";
+      }
     }
     __outputList.append(li);
   });
-  console.stdlog.apply(console, args);
 };
 
 console.clear = function () {
   while (__outputList.firstChild) {
     __outputList.removeChild(__outputList.firstChild);
   }
-  console.stdclear.apply(console);
 };
 
 // ----------------------------------------- //
 
 __runBtn.addEventListener("click", () => {
   try {
-    eval(__editor.getValue());
+    (function useFunc(value) {  
+      return Function(value);
+    })(__editor.getValue())()
   } catch (error) {
     console.log(new Error("Error: " + error.message));
   }
