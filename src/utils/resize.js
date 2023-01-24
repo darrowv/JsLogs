@@ -17,6 +17,9 @@ centralElement.addEventListener("mousedown", function(e) {
 function resizeElements(e) {
     let dx = e.clientX - startX;
     centralElement.style.border = "1px dashed var(--primary-font-color)";
+    
+    leftElement.style.pointerEvents = "none";
+    rightElement.style.pointerEvents = "none";
   
     leftElement.style.width = (leftWidth + dx) + "px";
     rightElement.style.width = (rightWidth - dx) + "px";
@@ -25,6 +28,9 @@ function resizeElements(e) {
 function stopResizing() {
     centralElement.style.border = "";
     
+    leftElement.style.removeProperty("pointer-events");
+    rightElement.style.removeProperty("pointer-events");
+
     document.removeEventListener("mousemove", resizeElements);
     document.removeEventListener("mouseup", stopResizing);
 }
