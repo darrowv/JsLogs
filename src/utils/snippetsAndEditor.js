@@ -1,4 +1,4 @@
-var __customSnippets = {
+var customSnippets = {
   cl: "console.log();",
   cc: "console.clear();",
   fd: "function name() {\n\n};",
@@ -36,7 +36,7 @@ console.log(null);`,
   }`
 };
 
-export var __editor = CodeMirror.fromTextArea(
+export var editor = CodeMirror.fromTextArea(
   document.getElementById("__inputArea"),
   {
     mode: "javascript",
@@ -52,7 +52,7 @@ export var __editor = CodeMirror.fromTextArea(
         var cur = cm.getRange({ line: cursor.line, ch: 0 }, cursor);
         var word = cm.findWordAt(cursor);
         var curWord = cm.getRange(word.anchor, word.head);
-        var snippet = __customSnippets[curWord];
+        var snippet = customSnippets[curWord];
         if (snippet) {
           cm.replaceRange(snippet, word.anchor, word.head);
           if (curWord === "cl") {

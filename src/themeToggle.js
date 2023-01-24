@@ -1,49 +1,48 @@
 // theme toggling
 
-let __currentTheme = localStorage.getItem("theme");
-let __toggleBtn = document.getElementById("__themeToggle");
-let __toggleImg = document.getElementById("__toggleImg");
-let __root = document.querySelector(":root");
-let __editorArea = document.querySelector(".CodeMirror");
+let currentTheme = localStorage.getItem("theme");
+let toggleBtn = document.getElementById("__themeToggle");
+let toggleImg = document.getElementById("__toggleImg");
+let root = document.querySelector(":root");
+let editorArea = document.querySelector(".CodeMirror");
 
-if (!__currentTheme) {
+if (!currentTheme) {
   localStorage.setItem("theme", "light");
-  __currentTheme = "light";
+  currentTheme = "light";
 }
 
-if (__currentTheme === "light") {
-  __toggleImg.src = "assets/lamp-on.svg";
+if (currentTheme === "light") {
+  toggleImg.src = "assets/lamp-on.svg";
+} else if (currentTheme === "dark") {
+  toggleImg.src = "assets/lamp-off.svg";
 
-} else if (__currentTheme === "dark") {
-  __toggleImg.src = "assets/lamp-off.svg";
-
-  __root.classList.add("dark-theme");
-  __editorArea.classList.remove("cm-s-default");
-  __editorArea.classList.add("cm-s-dracula");
+  root.classList.add("dark-theme");
+  editorArea.classList.remove("cm-s-default");
+  editorArea.classList.add("cm-s-dracula");
 }
 
-__toggleBtn.addEventListener("click", () => {
-  if (__currentTheme === "light") {
-    __currentTheme = "dark";
-    __toggleImg.src = "assets/lamp-off.svg";
+toggleBtn.addEventListener("click", () => {
+  if (currentTheme === "light") {
+    currentTheme = "dark";
+    toggleImg.src = "assets/lamp-off.svg";
 
-    __root.classList.add("dark-theme");
+    root.classList.add("dark-theme");
 
     // toggling theme in editor
-    __editorArea.classList.remove("cm-s-default");
-    __editorArea.classList.add("cm-s-dracula");
+    editorArea.classList.remove("cm-s-default");
+    editorArea.classList.add("cm-s-dracula");
 
     // toggling theme in ls
     localStorage.setItem("theme", "dark");
-  } else if (__currentTheme === "dark") {
-    __currentTheme = "light";
-    __toggleImg.src = "assets/lamp-on.svg";
+  } else if (currentTheme === "dark") {
+    currentTheme = "light";
+    toggleImg.src = "assets/lamp-on.svg";
 
-    __root.classList.remove("dark-theme");
+    root.classList.remove("dark-theme");
 
     //toggling theme in editor
-    __editorArea.classList.remove("cm-s-dracula");
-    __editorArea.classList.add("cm-s-default");
+    editorArea.classList.remove("cm-s-dracula");
+    editorArea.classList.add("cm-s-default");
 
     //toggling theme in ls
     localStorage.setItem("theme", "light");

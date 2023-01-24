@@ -1,53 +1,49 @@
 import prettier from "https://unpkg.com/prettier@2.8.3/esm/standalone.mjs";
 import babel from "https://unpkg.com/prettier@2.8.3/esm/parser-babel.mjs";
-import { __editor } from "./utils/snippetsAndEditor.js";
-import { __formatLog } from "./utils/formatOutput.js";
+import { editor } from "./utils/snippetsAndEditor.js";
+import { formatLog } from "./utils/formatOutput.js";
 
-var __outputList = document.getElementById("__outputList");
-var __runBtn = document.getElementById("__runBtn");
-var __clearBtn = document.getElementById("__clearBtn");
+var outputList = document.getElementById("__outputList");
+var runBtn = document.getElementById("__runBtn");
+var clearBtn = document.getElementById("__clearBtn");
 
 console.stdlog = console.log.bind(console);
 console.stdclear = console.clear.bind(console);
 
-
 console.log = function (...args) {
-
   args.forEach((log) => {
     let li = document.createElement("li");
-    if(log instanceof HTMLElement) {
-      li.textContent = "HTMLElement: " + log.tagName;
-    } else {
-      li.textContent = __formatLog(log);
-      if (__formatLog(log) instanceof Error) {
-        li.textContent = __formatLog(log).message;
-        li.style.color = "#ee0028";
-      }
+
+    li.textContent = formatLog(log);
+    
+    if (formatLog(log) instanceof Error) {
+      li.textContent = formatLog(log).message;
+      li.style.color = "#ee0028";
     }
-    __outputList.append(li);
+    outputList.append(li);
   });
 };
 
 console.clear = function () {
-  while (__outputList.firstChild) {
-    __outputList.removeChild(__outputList.firstChild);
+  while (outputList.firstChild) {
+    outputList.removeChild(outputList.firstChild);
   }
 };
 
 // ----------------------------------------- //
 
-__runBtn.addEventListener("click", () => {
+runBtn.addEventListener("click", () => {
   try {
-    (function useFunc(value) {  
+    (function useFunc(value) {
       return Function(value);
-    })(__editor.getValue())()
+    })(editor.getValue())();
   } catch (error) {
     console.log(new Error("Error: " + error.message));
   }
-  localStorage.setItem("input", __editor.getValue());
+  localStorage.setItem("input", editor.getValue());
 });
 
-__clearBtn.addEventListener("click", () => {
+clearBtn.addEventListener("click", () => {
   console.clear();
 });
 
@@ -55,18 +51,18 @@ __clearBtn.addEventListener("click", () => {
 
 document.addEventListener("keydown", (e) => {
   if (e.ctrlKey && e.key === "Enter") {
-    __runBtn.click();
+    runBtn.click();
   } else if (e.ctrlKey && e.key === "\\") {
     console.clear();
   } else if (e.shiftKey && e.altKey && e.key === "F") {
     e.preventDefault();
-    let prettieredCode = prettier.format(__editor.getValue(), {
+    let prettieredCode = prettier.format(editor.getValue(), {
       parser: "babel",
       plugins: [babel],
     });
-    __editor.setValue(prettieredCode);
+    editor.setValue(prettieredCode);
   }
 });
 
-var __savedCode = localStorage.getItem("input");
-__editor.setValue(__savedCode);
+var savedCode = localStorage.getItem("input");
+editor.setValue(savedCode);

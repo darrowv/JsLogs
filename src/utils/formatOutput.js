@@ -1,4 +1,4 @@
-export function __formatLog(log) {
+export function formatLog(log) {
   let value = "";
 
   if (log === null) {
@@ -9,6 +9,9 @@ export function __formatLog(log) {
     return value;
   } else if (log instanceof Error) {
     value = log;
+    return value;
+  } else if (log instanceof HTMLElement) {
+    value = "HTMLElement: " + log.localName;
     return value;
   } else if (log === 0) {
     value = Object.is(log, -0) ? "-0" : 0;
@@ -24,9 +27,13 @@ export function __formatLog(log) {
       break;
     case "object":
       if (Array.isArray(log)) {
-        value = __arrayTemplate(log);
+        value = arrayTemplate(log);
+      } else if (log instanceof Map) {
+        value = "[object Map]";
+      } else if (log instanceof Set) {
+        value = "[object Set]";
       } else {
-        value = __objectTemplate(log);
+        value = objectTemplate(log);
       }
       break;
     default:
@@ -37,17 +44,17 @@ export function __formatLog(log) {
   return value;
 }
 
-export function __objectTemplate(obj) {
+export function objectTemplate(obj) {
   let str = "{";
   for (const key in obj) {
     if (typeof obj[key] === "object" && obj[key] !== null) {
-      if(Array.isArray(obj[key])) {
-        str += `\n  ${key}: ${__arrayTemplate(obj[key])},`;
+      if (Array.isArray(obj[key])) {
+        str += `\n  ${key}: ${arrayTemplate(obj[key])},`;
       } else {
-        str += `\n  ${key}: ${__objectTemplate(obj[key])},`;
+        str += `\n  ${key}: ${objectTemplate(obj[key])},`;
       }
     } else {
-      str += `\n  ${key}: ${__formatLog(obj[key])},`;
+      str += `\n  ${key}: ${formatLog(obj[key])},`;
     }
   }
   str = str.slice(0, -1);
@@ -55,18 +62,18 @@ export function __objectTemplate(obj) {
   return str;
 }
 
-export function __arrayTemplate(arr) {
+export function arrayTemplate(arr) {
   let str = "[ ";
 
   arr.forEach((el, index) => {
-    if(index !== arr.length - 1) {
-      str += __formatLog(el) + ", ";
+    if (index !== arr.length - 1) {
+      str += formatLog(el) + ", ";
     } else {
-      str += __formatLog(el);
+      str += formatLog(el);
     }
-  })
+  });
 
   str += " ]";
 
-  return str
+  return str;
 }
