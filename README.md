@@ -39,6 +39,7 @@ We welcome contributions from the community to improve the editor. You can fork 
 - The idea of theme switching mechanism is taken from [here](https://dev.to/vaishnavs/simple-dark-light-toggle-with-vanillajs-2cbj).
 - The script for resizing divs by dragging was taken from [here](https://htmldom.dev/).
 - [Prettier in browser.](https://prettier.io/docs/en/browser.html)
+- The lamp icons are taken from [svgrepo](https://www.svgrepo.com/).
 
 ## Licensing
 This software is released under the [MIT License](https://opensource.org/licenses/MIT).

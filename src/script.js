@@ -3,7 +3,6 @@ import babel from "https://unpkg.com/prettier@2.8.3/esm/parser-babel.mjs";
 import { __editor } from "./utils/snippetsAndEditor.js";
 import { __formatLog } from "./utils/formatOutput.js";
 
-
 var __outputList = document.getElementById("__outputList");
 var __runBtn = document.getElementById("__runBtn");
 var __clearBtn = document.getElementById("__clearBtn");

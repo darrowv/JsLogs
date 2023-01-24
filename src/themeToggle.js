@@ -2,6 +2,7 @@
 
 let __currentTheme = localStorage.getItem("theme");
 let __toggleBtn = document.getElementById("__themeToggle");
+let __toggleImg = document.getElementById("__toggleImg");
 let __root = document.querySelector(":root");
 let __editorArea = document.querySelector(".CodeMirror");
 
@@ -11,9 +12,11 @@ if (!__currentTheme) {
 }
 
 if (__currentTheme === "light") {
-  __toggleBtn.innerText = "🌑";
+  __toggleImg.src = "assets/lamp-on.svg";
+
 } else if (__currentTheme === "dark") {
-  __toggleBtn.innerText = "☀️";
+  __toggleImg.src = "assets/lamp-off.svg";
+
   __root.classList.add("dark-theme");
   __editorArea.classList.remove("cm-s-default");
   __editorArea.classList.add("cm-s-dracula");
@@ -22,7 +25,8 @@ if (__currentTheme === "light") {
 __toggleBtn.addEventListener("click", () => {
   if (__currentTheme === "light") {
     __currentTheme = "dark";
-    __toggleBtn.innerText = "☀️";
+    __toggleImg.src = "assets/lamp-off.svg";
+
     __root.classList.add("dark-theme");
 
     // toggling theme in editor
@@ -33,7 +37,8 @@ __toggleBtn.addEventListener("click", () => {
     localStorage.setItem("theme", "dark");
   } else if (__currentTheme === "dark") {
     __currentTheme = "light";
-    __toggleBtn.innerText = "🌑";
+    __toggleImg.src = "assets/lamp-on.svg";
+
     __root.classList.remove("dark-theme");
 
     //toggling theme in editor
