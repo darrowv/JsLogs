@@ -80,7 +80,6 @@ body {
 
 .output-field {
   width: 50%;
-  flex: 1 1 0%;
   background-color: var(--output-field-color);
   color: var(--primary-font-color);
   padding: 0.5rem;
