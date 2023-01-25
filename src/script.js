@@ -15,7 +15,7 @@ console.log = function (...args) {
     let li = document.createElement("li");
 
     li.textContent = formatLog(log);
-    
+
     if (formatLog(log) instanceof Error) {
       li.textContent = formatLog(log).message;
       li.style.color = "#ee0028";

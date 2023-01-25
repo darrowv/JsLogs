@@ -1,5 +1,4 @@
 // theme toggling
-
 let currentTheme = localStorage.getItem("theme");
 let toggleBtn = document.getElementById("__themeToggle");
 let toggleImg = document.getElementById("__toggleImg");

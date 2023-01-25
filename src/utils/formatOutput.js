@@ -92,6 +92,7 @@ function hashmapTemplate(hashmap) {
 
 function hashsetTemplate(hashset) {
   let str = "Set:\n  | ";
+
   let lastValue;
   hashset.forEach((value) => {
     lastValue = value;

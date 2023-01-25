@@ -33,7 +33,7 @@ console.log(null);`,
   
     default:
       break;
-  }`
+  }`,
 };
 
 export var editor = CodeMirror.fromTextArea(
