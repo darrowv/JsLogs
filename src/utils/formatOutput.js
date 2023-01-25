@@ -29,9 +29,9 @@ export function formatLog(log) {
       if (Array.isArray(log)) {
         value = arrayTemplate(log);
       } else if (log instanceof Map) {
-        value = "[object Map]";
+        value = hashmapTemplate(log);
       } else if (log instanceof Set) {
-        value = "[object Set]";
+        value = hashsetTemplate(log);
       } else {
         value = objectTemplate(log);
       }
@@ -44,7 +44,9 @@ export function formatLog(log) {
   return value;
 }
 
-export function objectTemplate(obj) {
+function objectTemplate(obj) {
+  if (!Object.keys(obj).length) return "{}";
+
   let str = "{";
   for (const key in obj) {
     if (typeof obj[key] === "object" && obj[key] !== null) {
@@ -62,7 +64,7 @@ export function objectTemplate(obj) {
   return str;
 }
 
-export function arrayTemplate(arr) {
+function arrayTemplate(arr) {
   let str = "[ ";
 
   arr.forEach((el, index) => {
@@ -74,6 +76,34 @@ export function arrayTemplate(arr) {
   });
 
   str += " ]";
+
+  return str;
+}
+
+function hashmapTemplate(hashmap) {
+  let str = "Map:";
+
+  hashmap.forEach((value, key) => {
+    str += `\n ${formatLog(key)}: ${formatLog(value)}`;
+  });
+
+  return str;
+}
+
+function hashsetTemplate(hashset) {
+  let str = "Set:\n  | ";
+  let lastValue;
+  hashset.forEach((value) => {
+    lastValue = value;
+  });
+
+  hashset.forEach((value, _, set) => {
+    if (value !== lastValue) {
+      str += `${formatLog(value)}, `;
+    } else {
+      str += `${formatLog(value)} |`;
+    }
+  });
 
   return str;
 }
