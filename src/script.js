@@ -34,7 +34,7 @@ console.clear = function () {
 
 runBtn.addEventListener("click", () => {
   try {
-    (function useFunc(value) {
+    (function runCode(value) {
       return Function(value);
     })(editor.getValue())();
   } catch (error) {
