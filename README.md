@@ -46,9 +46,3 @@ We welcome contributions from the community to improve the editor. You can fork 
 - The script for resizing divs by dragging was taken from [here](https://htmldom.dev/).
 - [Prettier in browser.](https://prettier.io/docs/en/browser.html)
 - The lamp icons are taken from [svgrepo](https://www.svgrepo.com/).
-
-## Licensing
-
-This software is released under the [MIT License](https://opensource.org/licenses/MIT).
-
-Thanks for using this app! Happy coding!
