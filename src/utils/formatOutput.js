@@ -84,7 +84,7 @@ function hashmapTemplate(hashmap) {
   let str = "Map:";
 
   hashmap.forEach((value, key) => {
-    str += `\n ${formatLog(key)}: ${formatLog(value)}`;
+    str += `\n ${formatLog(key)} ==> ${formatLog(value)}`;
   });
 
   return str;
