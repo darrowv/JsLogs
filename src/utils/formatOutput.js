@@ -20,7 +20,7 @@ export function formatLog(log) {
 
   switch (typeof log) {
     case "string":
-      value = `"${log}"`;
+      value = `'${log}'`;
       break;
     case "bigint":
       value = log + "n";
